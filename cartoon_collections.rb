@@ -11,8 +11,13 @@ def long_planeteer_calls(call)
   
 end
 
-def find_the_cheese(cheeses)
-  cheese_types = ["cheddar", "gouda", "camembert"]
-  new = cheeses.each_with_index{|ch, i| cheese_types[i] if cheeses.include?(ch)}
-  
-end
+def cheese_finder(shopping_list)
+    new = []
+    cheeses = ["cheddar", "gouda"]
+    cheeses.each_with_index{|ch, i| new << cheeses[i] if shopping_list.include?(ch)}
+    if new.length == 1
+        return new[0]
+    else
+        return nil
+    end    
+end  
